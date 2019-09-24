@@ -1,14 +1,16 @@
 const express = require('express')
-const userController = require('./app/controllers/userController')
+const userController = new require('./app/controllers/userController')
 
 const routes = express.Router()
 
-routes.get('/users', (req, res) => { }); //Listar todos
-routes.post('/users', (req, res) => { }); // Criar
-routes.get('/users/:id', (req, res) => { }); //Buscar
-routes.put('/users/:id', (req, res) => { }); //Editar
-routes.delete('/users/:id', (req, res) => { }); //Deletar
+routes.get('/findAll', userController.findAll);
+
+routes.get('/findById/:id', userController.findById);
 
 routes.post('/register', userController.register);
+
+routes.put('/update/:id', userController.update);
+
+routes.delete('/delete/:id', userController.delete);
 
 module.exports = routes

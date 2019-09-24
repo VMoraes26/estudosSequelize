@@ -13,6 +13,4 @@ server.use(bodyParser.json())
 
 server.use(routes)
 
-//User.create({ name: 'Claudio', email: 'claudio@rocketseat.com.br', password: '123456' })
-
 server.listen(3000);
